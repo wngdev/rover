@@ -11,7 +11,7 @@
 
 using namespace std;
 
-//#define AUTO
+#define AUTO
 
 #ifndef AUTO
 ManualController manualCont;
