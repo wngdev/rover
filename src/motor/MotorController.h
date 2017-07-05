@@ -9,6 +9,7 @@
 #define SRC_MOTOR_MOTORCONTROLLER_H_
 
 #include <boost/shared_ptr.hpp>
+#include <boost/scoped_ptr.hpp>
 #include <boost/thread.hpp>
 #include <boost/asio.hpp>
 #include "../gpio/GPIOController.h"
