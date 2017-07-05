@@ -7,6 +7,7 @@
 
 #include "CameraController.h"
 #include "CameraSimulator.h"
+#include <iostream>
 
 CameraController::CameraController(bool simulator) {
 	std::cout << "CameraController() constructor" << endl;
