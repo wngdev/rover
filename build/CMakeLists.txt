@@ -15,6 +15,7 @@ if (NOT "${CMAKE_SYSTEM_PROCESSOR}" STREQUAL "armv7l")
 endif()
 
 include_directories(${Boost_INCLUDE_DIRS})
+include_directories(../wiringPi/wiringPi)
 
 aux_source_directory(../src SRC_FILES)
 aux_source_directory(../src/manualcontrol SRC_FILES)
