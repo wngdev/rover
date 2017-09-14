@@ -16,6 +16,7 @@ HardwareController::HardwareController() {
 	m_distanceSensor.reset(new DistanceSensorController(false, DISTANCESENSOR_SAMPLING_INTERVAL));
 	m_motor.reset(new MotorController(false));
 	m_camera.reset(new CameraController(false));
+	m_imu.reset(new IMUController(false));
 
 	if (m_lineSensor) {
 		m_lineSensor->addLineSensorObserver(this);
@@ -29,6 +30,9 @@ HardwareController::HardwareController() {
 	if (m_camera) {
 		m_camera->addCameraObserver(this);
 	}
+	if (m_imu) {
+		m_imu->addIMUObserver(this);
+	}
 }
 
 HardwareController::~HardwareController() {
@@ -36,12 +40,14 @@ HardwareController::~HardwareController() {
 	m_distanceSensor.reset();
 	m_motor.reset();
 	m_camera.reset();
+	m_imu.reset();
 }
 
 void HardwareController::setDBController(boost::shared_ptr<DatabaseController> db) {
 	m_db = db;
 	m_lineSensor->setDBController(m_db);
 	m_distanceSensor->setDBController(m_db);
+	m_imu->setDBController(m_db);
 }
 
 void HardwareController::start() {
@@ -58,6 +64,9 @@ void HardwareController::start() {
 	if (m_camera) {
 		m_camera->start();
 	}
+	if (m_imu) {
+		m_imu->start();
+	}
 }
 
 void HardwareController::stop() {
@@ -73,6 +82,9 @@ void HardwareController::stop() {
 	}
 	if (m_camera) {
 		m_camera->stop();
+	}
+	if (m_imu) {
+		m_imu->stop();
 	}
 }
 
@@ -136,5 +148,10 @@ void HardwareController::turnRight(float speed) {
 
 void HardwareController::notifyCameraImage(boost::shared_ptr<Mat> image) {
 	cout << "New camera image delivered" << endl;
+	// TODO
+}
+
+void HardwareController::notifyAccelerometerData(const float& x, const float& y, const float& z) {
+	cout << "Accelerometer data (x=" << x << ", y=" << y << ", z=" << z << ")" << endl;
 	// TODO
 }

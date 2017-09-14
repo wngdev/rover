@@ -12,11 +12,13 @@
 #include "../distancesensor/DistanceSensorController.h"
 #include "../motor/MotorController.h"
 #include "../camera/CameraController.h"
+#include "../imu/IMUController.h"
 
 #include "../linesensor/LineSensorObserverInterface.h"
 #include "../distancesensor/DistanceSensorObserverInterface.h"
 #include "../motor/MotorObserverInterface.h"
 #include "../camera/CameraObserverInterface.h"
+#include "../imu/IMUObserverInterface.h"
 
 #include "../db/DatabaseController.h"
 
@@ -24,7 +26,7 @@
 
 using namespace std;
 
-class HardwareController : public LineSensorObserverInterface, DistanceSensorObserverInterface, MotorObserverInterface, CameraObserverInterface {
+class HardwareController : public LineSensorObserverInterface, DistanceSensorObserverInterface, MotorObserverInterface, CameraObserverInterface, IMUObserverInterface {
 public:
 	HardwareController();
 	virtual ~HardwareController();
@@ -49,12 +51,15 @@ public:
 	void turnRight(float speed);
 
 	void notifyCameraImage(boost::shared_ptr<Mat> image);
+
+	void notifyAccelerometerData(const float& x, const float& y, const float& z);
 private:
 	boost::shared_ptr<LineSensorController> m_lineSensor;
 	boost::shared_ptr<DistanceSensorController> m_distanceSensor;
 	boost::shared_ptr<MotorController> m_motor;
 	boost::shared_ptr<DatabaseController> m_db;
 	boost::shared_ptr<CameraController> m_camera;
+	boost::shared_ptr<IMUController> m_imu;
 };
 
 
