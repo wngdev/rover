@@ -10,8 +10,6 @@
 
 #include "CameraInterface.h"
 
-using namespace std;
-
 class CameraSimulator : public CameraInterface {
 public:
 	CameraSimulator();
