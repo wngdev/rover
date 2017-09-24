@@ -1,7 +1,7 @@
 #include <iostream>
 
-#include "manualcontrol/ManualController.h"
-#include "autocontrol/AutoController.h"
+#include "../src/manualcontrol/ManualController.h"
+#include "../src/autocontrol/AutoController.h"
 #include <boost/thread.hpp>
 #include <signal.h>
 #include <cstdlib>
