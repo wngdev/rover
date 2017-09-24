@@ -1,6 +1,6 @@
 pipeline {
 	agent {
-		docker 'stretch_amd64-builder:latest'
+		label 'linux'
 	}
 	stages {
 		stage ('Static analysis') {
@@ -13,10 +13,18 @@ pipeline {
 
 		stage ('Compile') {
 			steps {
-				script{
+				script {
 					// JENKINS-33510 prevents using the 'dir' command, so let's use 'cd'
 					sh 'cd build && cmake .'
 					sh 'cd build && make -j4 2> ../build.log'
+				}
+			}
+		}
+
+		stage ('Cleanup') {
+			steps {
+				script {
+					cleanWs()
 				}
 			}
 		}
