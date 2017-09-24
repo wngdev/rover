@@ -17,6 +17,7 @@ pipeline {
 					def scannerHome = tool 'SonarQube Scanner 3.0.3.778';
 					withSonarQubeEnv('SonarQube Server 6.2') {
 						sh "${scannerHome}/bin/sonar-scanner"
+					}
 				}
 			}
 		}
