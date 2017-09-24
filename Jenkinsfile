@@ -16,7 +16,7 @@ pipeline {
 				script {
 					// JENKINS-33510 prevents using the 'dir' command, so let's use 'cd'
 					sh 'cd build && cmake .'
-					sh 'cd build && make -j4 2> ../build.log'
+					sh 'cd build && make -j4'
 				}
 			}
 		}
