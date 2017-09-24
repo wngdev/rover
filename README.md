@@ -1,7 +1,7 @@
 # Rover
 Raspberry Pi self-driving mini car
 
-###Dependency installation (Debian Jessie):
+### Dependency installation (Debian Jessie):
 ```
 sudo apt build-essential \
 	cmake \
@@ -14,20 +14,20 @@ sudo apt build-essential \
 	libsqlite3-dev
 ```
 
-###WiringPi installation:
+### WiringPi installation:
 ```
 git clone git://git.drogon.net/wiringPi
 cd wiringPi
 ./build
 ```
 
-###To build Rover:
+### To build Rover:
 ```
 cmake .
 make
 ```
 
-###To run Rover:
+### To run Rover:
 ```
 cd bin
 ./rover
