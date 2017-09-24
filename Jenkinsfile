@@ -36,9 +36,9 @@ pipeline {
 		always {
 			deleteDir()
 			emailext(
-				body: "${DEFAULT_CONTENT}",
+				body: '$DEFAULT_CONTENT',
 				mimeType: 'text/html',
-				subject: "${DEFAULT_SUBJECT}",
+				subject: '$DEFAULT_SUBJECT',
 				recipientProviders: [
 					[$class: 'DevelopersRecipientProvider'], 
 					[$class: 'CulpritsRecipientProvider'], 
