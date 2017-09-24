@@ -8,6 +8,7 @@
 #ifndef SRC_CAMERA_CAMERAOBSERVERINTERFACE_H_
 #define SRC_CAMERA_CAMERAOBSERVERINTERFACE_H_
 
+#include <memory>
 #include <opencv2/core/core.hpp>
 
 using namespace cv;
