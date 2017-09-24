@@ -11,6 +11,9 @@ ManualController::ManualController() :
 	HardwareController(),
 	m_paired(false) {
 	cout << "ManualController() constructor" << endl;
+#ifdef CWIID
+	m_wiimote = NULL;
+#endif
 }
 
 ManualController::~ManualController() {
