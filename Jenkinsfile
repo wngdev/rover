@@ -3,7 +3,15 @@ pipeline {
 		label 'linux'
 	}
 	stages {
-		stage ('Compile') {
+		stage ('Compile Google Test') {
+			steps {
+				script {
+					sh 'cd external/googletest && cmake . && make -j4'
+				}
+			}
+		}
+
+		stage ('Compile Rover') {
 			steps {
 				script {
 					sh 'cmake .'
