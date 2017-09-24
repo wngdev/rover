@@ -24,6 +24,8 @@ public:
 	bool executeQueryWithoutTuples(std::string query);
 	bool executeQueryWithTuples(std::string query, std::vector<std::map<std::string, std::string> >& result);
 private:
+	bool executeQuery(const string& query, std::vector<std::map<std::string, std::string> >& result);
+
 	sqlite3* m_db;
 	boost::mutex m_mutex;
 };

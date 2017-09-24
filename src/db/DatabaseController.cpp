@@ -32,60 +32,41 @@ DatabaseController::~DatabaseController() {
 }
 
 bool DatabaseController::executeQueryWithoutTuples(std::string query) {
-
-	sqlite3_stmt *stmt;
-
-	boost::lock_guard<boost::mutex> lock(m_mutex);
-
-	//cout << query << endl;
-
-	int rc = sqlite3_prepare_v2(m_db, query.c_str(), -1, &stmt, NULL);
-
-	if (rc != SQLITE_OK) {
-		cerr << sqlite3_errmsg(m_db) << endl;
-		sqlite3_finalize(stmt);
-		return false;
-	}
-
-	rc = sqlite3_step(stmt);
-
-	if (rc != SQLITE_ROW && rc != SQLITE_DONE) {
-		cerr << sqlite3_errmsg(m_db) << endl;
-		sqlite3_finalize(stmt);
-		return false;
-	}
-	if (rc == SQLITE_DONE) {
-		sqlite3_finalize(stmt);
-	}
-
-	return true;
+	std::vector<std::map<std::string, std::string> > emptyResult;
+	return executeQuery(query, emptyResult);
 }
 
 bool DatabaseController::executeQueryWithTuples(std::string query, std::vector<std::map<std::string, std::string> >& result) {
+	return executeQuery(query, result);
+}
 
-	sqlite3_stmt *stmt;
-
+bool DatabaseController::executeQuery(const string& query, std::vector<std::map<std::string, std::string> >& result) {
 	boost::lock_guard<boost::mutex> lock(m_mutex);
 
 	//cout << query << endl;
 
+	sqlite3_stmt* stmt;
 	int rc = sqlite3_prepare_v2(m_db, query.c_str(), -1, &stmt, NULL);
 
 	if (rc != SQLITE_OK) {
 		cerr << sqlite3_errmsg(m_db) << endl;
 		sqlite3_finalize(stmt);
 		return false;
+	} else {
+		rc = sqlite3_step(stmt);
+
+		if (rc != SQLITE_ROW && rc != SQLITE_DONE) {
+			cerr << sqlite3_errmsg(m_db) << endl;
+			sqlite3_finalize(stmt);
+			return false;
+		}
+		sqlite3_finalize(stmt);
 	}
 
-	rc = sqlite3_step(stmt);
-
-	if (rc != SQLITE_ROW && rc != SQLITE_DONE) {
+	if (rc != SQLITE_OK) {
 		cerr << sqlite3_errmsg(m_db) << endl;
 		sqlite3_finalize(stmt);
 		return false;
-	}
-	if (rc == SQLITE_DONE) {
-		sqlite3_finalize(stmt);
 	}
 
 	while (rc == SQLITE_ROW) {
