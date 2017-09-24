@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>Rover-Debug@rover</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.cdt.make.core.makeBuilder</name>
+			<triggers>clean,full,incremental,</triggers>
+			<arguments>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.cleanBuildTarget</key>
+					<value>clean</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.enableCleanBuild</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.append_environment</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.stopOnError</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.enabledIncrementalBuild</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.build.command</key>
+					<value>/usr/bin/make</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.contents</key>
+					<value>org.eclipse.cdt.make.core.activeConfigSettings</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.build.target.inc</key>
+					<value>all</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.build.arguments</key>
+					<value>-j4</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.buildLocation</key>
+					<value>/Users/sebastian/Documents/Documents - wngpro/Privat/Programmering/rover</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.useDefaultBuildCmd</key>
+					<value>false</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.environment</key>
+					<value>VERBOSE=1|CMAKE_NO_VERBOSE=1|</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.enableFullBuild</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.build.target.auto</key>
+					<value>all</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.enableAutoBuild</key>
+					<value>false</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.build.target.clean</key>
+					<value>clean</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.fullBuildTarget</key>
+					<value>all</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.buildArguments</key>
+					<value></value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.build.location</key>
+					<value>/Users/sebastian/Documents/Documents - wngpro/Privat/Programmering/rover</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.autoBuildTarget</key>
+					<value>all</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.core.errorOutputParser</key>
+					<value>org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GASErrorParser;org.eclipse.cdt.core.GLDErrorParser;</value>
+				</dictionary>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.cdt.make.core.ScannerConfigBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.cdt.make.core.makeNature</nature>
+		<nature>org.eclipse.cdt.make.core.ScannerConfigNature</nature>
+		<nature>org.eclipse.cdt.core.ccnature</nature>
+		<nature>org.eclipse.cdt.core.cnature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>[Subprojects]</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] rover</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] rover/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] rover/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] rover/Source Files/main.cpp</name>
+			<type>1</type>
+			<location>/Users/sebastian/Documents/Documents - wngpro/Privat/Programmering/rover/src/main.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] rover/Source Files/ManualController.cpp</name>
+			<type>1</type>
+			<location>/Users/sebastian/Documents/Documents - wngpro/Privat/Programmering/rover/src/manualcontrol/ManualController.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] rover/Source Files/AutoController.cpp</name>
+			<type>1</type>
+			<location>/Users/sebastian/Documents/Documents - wngpro/Privat/Programmering/rover/src/autocontrol/AutoController.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] rover/Source Files/GPIOController.cpp</name>
+			<type>1</type>
+			<location>/Users/sebastian/Documents/Documents - wngpro/Privat/Programmering/rover/src/gpio/GPIOController.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] rover/Source Files/GPIOHardware.cpp</name>
+			<type>1</type>
+			<location>/Users/sebastian/Documents/Documents - wngpro/Privat/Programmering/rover/src/gpio/GPIOHardware.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] rover/Source Files/GPIOSimulator.cpp</name>
+			<type>1</type>
+			<location>/Users/sebastian/Documents/Documents - wngpro/Privat/Programmering/rover/src/gpio/GPIOSimulator.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] rover/Source Files/HardwareController.cpp</name>
+			<type>1</type>
+			<location>/Users/sebastian/Documents/Documents - wngpro/Privat/Programmering/rover/src/hardwarecontroller/HardwareController.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] rover/Source Files/DistanceSensorController.cpp</name>
+			<type>1</type>
+			<location>/Users/sebastian/Documents/Documents - wngpro/Privat/Programmering/rover/src/distancesensor/DistanceSensorController.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] rover/Source Files/LineSensorController.cpp</name>
+			<type>1</type>
+			<location>/Users/sebastian/Documents/Documents - wngpro/Privat/Programmering/rover/src/linesensor/LineSensorController.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] rover/Source Files/MotorController.cpp</name>
+			<type>1</type>
+			<location>/Users/sebastian/Documents/Documents - wngpro/Privat/Programmering/rover/src/motor/MotorController.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] rover/Source Files/DatabaseController.cpp</name>
+			<type>1</type>
+			<location>/Users/sebastian/Documents/Documents - wngpro/Privat/Programmering/rover/src/db/DatabaseController.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] rover/Source Files/CameraController.cpp</name>
+			<type>1</type>
+			<location>/Users/sebastian/Documents/Documents - wngpro/Privat/Programmering/rover/src/camera/CameraController.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] rover/Source Files/CameraSimulator.cpp</name>
+			<type>1</type>
+			<location>/Users/sebastian/Documents/Documents - wngpro/Privat/Programmering/rover/src/camera/CameraSimulator.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] rover/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] rover/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] rover/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] rover/Object Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+	</linkedResources>
+</projectDescription>
