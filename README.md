@@ -10,10 +10,9 @@ cd wiringPi
 ./build
 
 To build Rover:
-cd build
 cmake .
 make
 
 To run Rover:
 cd bin
-./Rover
+./rover
