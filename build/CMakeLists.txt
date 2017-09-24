@@ -15,6 +15,9 @@ find_package(OpenCV REQUIRED)
 if (NOT "${CMAKE_SYSTEM_PROCESSOR}" STREQUAL "armv7l")
 	# Uses simulated HW
 	add_definitions(-DTESTMODE)
+
+	# Enable warnings
+	add_definitions(-fdiagnostics-show-option)
 endif()
 
 include_directories(${Boost_INCLUDE_DIRS})
