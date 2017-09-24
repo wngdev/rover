@@ -31,12 +31,12 @@ DatabaseController::~DatabaseController() {
 	m_db = 0;
 }
 
-bool DatabaseController::executeQueryWithoutTuples(std::string query) {
+bool DatabaseController::executeQueryWithoutTuples(const std::string& query) {
 	std::vector<std::map<std::string, std::string> > emptyResult;
 	return executeQuery(query, emptyResult);
 }
 
-bool DatabaseController::executeQueryWithTuples(std::string query, std::vector<std::map<std::string, std::string> >& result) {
+bool DatabaseController::executeQueryWithTuples(const std::string& query, std::vector<std::map<std::string, std::string> >& result) {
 	return executeQuery(query, result);
 }
 

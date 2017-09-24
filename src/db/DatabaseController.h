@@ -21,8 +21,8 @@ public:
 	DatabaseController();
 	virtual ~DatabaseController();
 
-	bool executeQueryWithoutTuples(std::string query);
-	bool executeQueryWithTuples(std::string query, std::vector<std::map<std::string, std::string> >& result);
+	bool executeQueryWithoutTuples(const std::string& query);
+	bool executeQueryWithTuples(const std::string& query, std::vector<std::map<std::string, std::string> >& result);
 private:
 	bool executeQuery(const string& query, std::vector<std::map<std::string, std::string> >& result);
 
