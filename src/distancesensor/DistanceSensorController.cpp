@@ -259,7 +259,7 @@ void DistanceSensorController::logDistance(float distance) {
 	}
 }
 
-boost::posix_time::ptime DistanceSensorController::toPtime(string input) {
+boost::posix_time::ptime DistanceSensorController::toPtime(const string& input) {
 	boost::posix_time::ptime pt;
 	try {
 		stringstream ss;
