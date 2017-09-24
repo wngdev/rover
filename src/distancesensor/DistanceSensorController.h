@@ -36,7 +36,7 @@ private:
 	int getAvgDistance();
 	void logDistance(float distance);
 	void testingThread();
-	boost::posix_time::ptime toPtime(string input);
+	boost::posix_time::ptime toPtime(const string& input);
 
 	shared_ptr<GPIOController> m_gpio;
 	vector<DistanceSensorObserverInterface*> m_observers;
