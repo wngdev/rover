@@ -35,6 +35,14 @@ pipeline {
 	post {
 		always {
 			deleteDir()
+			emailext(
+				body: "${DEFAULT_CONTENT}",
+				mimeType: 'text/html',
+				subject: "${DEFAULT_SUBJECT}",
+				recipientProviders: [
+					[$class: 'DevelopersRecipientProvider'], 
+					[$class: 'CulpritsRecipientProvider'], 
+					[$class: 'RequesterRecipientProvider']])
 		}
 	}
 }
