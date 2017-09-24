@@ -16,7 +16,7 @@ pipeline {
 		stage ('Static analysis') {
 			steps {
 				script {
-					sh 'cppcheck --enable=all --xml-version=2 src/ 2> report.xml'
+					sh 'cppcheck --enable=all --xml-version=2 --suppress=missingIncludeSystem src/ 2> report.xml'
 				}
 			}
 		}
