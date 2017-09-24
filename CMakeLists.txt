@@ -22,7 +22,9 @@ endif()
 
 include_directories(${Boost_INCLUDE_DIRS})
 # Assuming that wiringPi has been cloned into a directory above this one. 
-include_directories(../wiringPi/wiringPi)
+include_directories(${CMAKE_SOURCE_DIR}/../wiringPi/wiringPi)
+include_directories(${CMAKE_SOURCE_DIR}/lib/googletest/googletest/include/gtest)
+include_directories(${CMAKE_SOURCE_DIR}/lib/googletest/googlemock/include/gmock)
 
 aux_source_directory(src SRC_FILES)
 aux_source_directory(src/manualcontrol SRC_FILES)
@@ -36,6 +38,9 @@ aux_source_directory(src/db SRC_FILES)
 aux_source_directory(src/camera SRC_FILES)
 aux_source_directory(src/imu SRC_FILES)
 
+link_directories(${CMAKE_SOURCE_DIR}/lib/googletest/googlemock)
+link_directories(${CMAKE_SOURCE_DIR}/lib/googletest/googlemock/gtest)
+
 add_executable(rover ${SRC_FILES} ${INCLUDE_FILES})
 
 target_link_libraries(rover 
@@ -43,7 +48,9 @@ target_link_libraries(rover
 	dl
 	ncurses
 	pthread
-	sqlite3)
+	sqlite3
+	gtest
+	gmock)
 
 if (LINK_WIRINGPI)
 	target_link_libraries(rover
