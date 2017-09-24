@@ -61,7 +61,7 @@ DistanceSensorController::~DistanceSensorController() {
 	m_thread.join();
 }
 
-void DistanceSensorController::setDBController(boost::shared_ptr<DatabaseController> db) {
+void DistanceSensorController::setDBController(shared_ptr<DatabaseController> db) {
 	m_db = db;
 
 	m_db->executeQueryWithoutTuples(

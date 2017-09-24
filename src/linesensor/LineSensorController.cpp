@@ -44,7 +44,7 @@ LineSensorController::~LineSensorController() {
 	m_thread.join();
 }
 
-void LineSensorController::setDBController(boost::shared_ptr<DatabaseController> db) {
+void LineSensorController::setDBController(shared_ptr<DatabaseController> db) {
 	m_db = db;
 
 	m_db->executeQueryWithoutTuples(

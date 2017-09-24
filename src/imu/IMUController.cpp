@@ -17,7 +17,7 @@ IMUController::~IMUController() {
 	m_observers.clear();
 }
 
-void IMUController::setDBController(const boost::shared_ptr<DatabaseController>& db) {
+void IMUController::setDBController(const shared_ptr<DatabaseController>& db) {
 	m_db = db;
 
 	m_db->executeQueryWithoutTuples(

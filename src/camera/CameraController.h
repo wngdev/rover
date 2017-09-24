@@ -8,7 +8,6 @@
 #ifndef SRC_CAMERA_CAMERACONTROLLER_H_
 #define SRC_CAMERA_CAMERACONTROLLER_H_
 
-#include <boost/shared_ptr.hpp>
 #include "CameraObserverInterface.h"
 #include <vector>
 
@@ -26,7 +25,7 @@ public:
 
 	void addCameraObserver(CameraObserverInterface* observer);
 private:
-	boost::shared_ptr<CameraInterface> m_camera;
+	shared_ptr<CameraInterface> m_camera;
 	vector<CameraObserverInterface*> m_observers;
 };
 

@@ -8,6 +8,8 @@
 #include "CameraSimulator.h"
 #include <iostream>
 
+using namespace std;
+
 CameraSimulator::CameraSimulator() {
 	cout << "CameraSimulator() constructor" << endl;
 }

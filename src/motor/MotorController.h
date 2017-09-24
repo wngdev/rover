@@ -8,7 +8,6 @@
 #ifndef SRC_MOTOR_MOTORCONTROLLER_H_
 #define SRC_MOTOR_MOTORCONTROLLER_H_
 
-#include <boost/shared_ptr.hpp>
 #include <boost/scoped_ptr.hpp>
 #include <boost/thread.hpp>
 #include <boost/asio.hpp>
@@ -46,13 +45,13 @@ private:
 	void notifyTurnLeft(float speed);
 	void notifyTurnRight(float speed);
 
-	boost::shared_ptr<GPIOController> m_gpio;
+	shared_ptr<GPIOController> m_gpio;
 	vector<MotorObserverInterface*> m_observers;
 	int m_motorLeftBackwardPin;
 	int m_motorLeftForwardPin;
 	int m_motorRightBackwardPin;
 	int m_motorRightForwardPin;
-	boost::shared_ptr<boost::asio::io_service> m_ioService;
+	shared_ptr<boost::asio::io_service> m_ioService;
 	boost::scoped_ptr<boost::asio::io_service::work> m_work;
 	boost::thread m_ioThread;
 };

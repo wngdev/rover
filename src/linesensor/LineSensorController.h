@@ -8,7 +8,6 @@
 #ifndef SRC_LINESENSOR_LINESENSORCONTROLLER_H_
 #define SRC_LINESENSOR_LINESENSORCONTROLLER_H_
 
-#include <boost/shared_ptr.hpp>
 #include <boost/thread.hpp>
 #include "../gpio/GPIOController.h"
 #include "LineSensorObserverInterface.h"
@@ -22,7 +21,7 @@ public:
 	LineSensorController(bool simulated, int samplingInterval);
 	virtual ~LineSensorController();
 
-	void setDBController(boost::shared_ptr<DatabaseController> db);
+	void setDBController(shared_ptr<DatabaseController> db);
 
 	void start();
 	void stop();
@@ -34,13 +33,13 @@ private:
 	void notifyOnLine(bool onLine);
 	void logOnLine(bool onLine);
 
-	boost::shared_ptr<GPIOController> m_gpio;
+	shared_ptr<GPIOController> m_gpio;
 	vector<LineSensorObserverInterface*> m_observers;
 	int m_gpioPin;
 	int m_samplingInterval;
 	bool m_onLine;
 	boost::thread m_thread;
-	boost::shared_ptr<DatabaseController> m_db;
+	shared_ptr<DatabaseController> m_db;
 };
 
 

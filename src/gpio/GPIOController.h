@@ -8,7 +8,9 @@
 #ifndef SRC_GPIO_GPIOCONTROLLER_H_
 #define SRC_GPIO_GPIOCONTROLLER_H_
 
-#include <boost/shared_ptr.hpp>
+#include <memory>
+
+using namespace std;
 
 class GPIOInterface;
 
@@ -28,7 +30,7 @@ public:
 
 	void pushTestSequence(int pin, int value);
 private:
-	boost::shared_ptr<GPIOInterface> m_gpio;
+	shared_ptr<GPIOInterface> m_gpio;
 };
 
 

@@ -15,7 +15,7 @@ public:
 	IMUController(const bool& simulated);
 	virtual ~IMUController();
 
-	void setDBController(const boost::shared_ptr<DatabaseController>& db);
+	void setDBController(const shared_ptr<DatabaseController>& db);
 
 	void start();
 	void stop();
@@ -27,8 +27,8 @@ public:
 private:
 	void logAccelerometer(const float& x, const float& y, const float& z);
 
-	boost::shared_ptr<IMUHardwareInterface> m_imuHw;
-	boost::shared_ptr<DatabaseController> m_db;
+	shared_ptr<IMUHardwareInterface> m_imuHw;
+	shared_ptr<DatabaseController> m_db;
 	vector<IMUObserverInterface*> m_observers;
 	bool m_testMode;
 };

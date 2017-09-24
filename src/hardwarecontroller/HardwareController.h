@@ -22,8 +22,6 @@
 
 #include "../db/DatabaseController.h"
 
-#include <boost/shared_ptr.hpp>
-
 using namespace std;
 
 class HardwareController : public LineSensorObserverInterface, DistanceSensorObserverInterface, MotorObserverInterface, CameraObserverInterface, IMUObserverInterface {
@@ -31,7 +29,7 @@ public:
 	HardwareController();
 	virtual ~HardwareController();
 
-	void setDBController(boost::shared_ptr<DatabaseController> db);
+	void setDBController(shared_ptr<DatabaseController> db);
 
 	void start();
 	void stop();
@@ -50,16 +48,16 @@ public:
 	void turnLeft(float speed);
 	void turnRight(float speed);
 
-	void notifyCameraImage(boost::shared_ptr<Mat> image);
+	void notifyCameraImage(shared_ptr<Mat> image);
 
 	void notifyAccelerometerData(const float& x, const float& y, const float& z);
 private:
-	boost::shared_ptr<LineSensorController> m_lineSensor;
-	boost::shared_ptr<DistanceSensorController> m_distanceSensor;
-	boost::shared_ptr<MotorController> m_motor;
-	boost::shared_ptr<DatabaseController> m_db;
-	boost::shared_ptr<CameraController> m_camera;
-	boost::shared_ptr<IMUController> m_imu;
+	shared_ptr<LineSensorController> m_lineSensor;
+	shared_ptr<DistanceSensorController> m_distanceSensor;
+	shared_ptr<MotorController> m_motor;
+	shared_ptr<DatabaseController> m_db;
+	shared_ptr<CameraController> m_camera;
+	shared_ptr<IMUController> m_imu;
 };
 
 

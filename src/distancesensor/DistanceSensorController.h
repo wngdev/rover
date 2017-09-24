@@ -8,7 +8,6 @@
 #ifndef SRC_DISTANCESENSOR_DISTANCESENSORCONTROLLER_H_
 #define SRC_DISTANCESENSOR_DISTANCESENSORCONTROLLER_H_
 
-#include <boost/shared_ptr.hpp>
 #include <boost/thread.hpp>
 #include <boost/date_time.hpp>
 #include "../gpio/GPIOController.h"
@@ -23,7 +22,7 @@ public:
 	DistanceSensorController(bool simulated, int samplingInterval);
 	virtual ~DistanceSensorController();
 
-	void setDBController(boost::shared_ptr<DatabaseController> db);
+	void setDBController(shared_ptr<DatabaseController> db);
 
 	void start();
 	void stop();
@@ -39,9 +38,9 @@ private:
 	void testingThread();
 	boost::posix_time::ptime toPtime(string input);
 
-	boost::shared_ptr<GPIOController> m_gpio;
+	shared_ptr<GPIOController> m_gpio;
 	vector<DistanceSensorObserverInterface*> m_observers;
-	boost::shared_ptr<DatabaseController> m_db;
+	shared_ptr<DatabaseController> m_db;
 	map<string, float> m_loadedDistances;
 	int m_triggerPin;
 	int m_echoPin;

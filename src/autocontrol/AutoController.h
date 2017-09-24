@@ -10,7 +10,6 @@
 
 #include "../hardwarecontroller/HardwareController.h"
 #include "../db/DatabaseController.h"
-#include <boost/thread.hpp>
 
 class AutoController : public HardwareController {
 public:
@@ -35,7 +34,7 @@ private:
 	boost::thread m_thread;
 	int m_latestDirection;
 	float m_latestSpeed;
-	boost::shared_ptr<DatabaseController> m_db;
+	shared_ptr<DatabaseController> m_db;
 };
 
 

@@ -43,7 +43,7 @@ HardwareController::~HardwareController() {
 	m_imu.reset();
 }
 
-void HardwareController::setDBController(boost::shared_ptr<DatabaseController> db) {
+void HardwareController::setDBController(shared_ptr<DatabaseController> db) {
 	m_db = db;
 	m_lineSensor->setDBController(m_db);
 	m_distanceSensor->setDBController(m_db);
@@ -146,7 +146,7 @@ void HardwareController::turnRight(float speed) {
 	}
 }
 
-void HardwareController::notifyCameraImage(boost::shared_ptr<Mat> image) {
+void HardwareController::notifyCameraImage(shared_ptr<Mat> image) {
 	cout << "New camera image delivered" << endl;
 	// TODO
 }
