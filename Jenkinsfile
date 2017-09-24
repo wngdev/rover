@@ -44,13 +44,10 @@ pipeline {
 				}
 			}
 		}
-
-		stage ('Cleanup') {
-			steps {
-				script {
-					cleanWs()
-				}
-			}
+	}
+	post {
+		always {
+			deleteDir()
 		}
 	}
 }
