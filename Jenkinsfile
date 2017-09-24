@@ -6,7 +6,7 @@ pipeline {
 		stage ('Compile Google Test') {
 			steps {
 				script {
-					sh 'cd external/googletest && cmake . && make -j4'
+					sh 'cd lib/googletest && cmake . && make -j4'
 				}
 			}
 		}
